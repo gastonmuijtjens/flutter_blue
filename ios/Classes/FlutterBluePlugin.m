@@ -407,6 +407,9 @@ typedef NS_ENUM(NSUInteger, LogLevel) {
   // TODO:?
 }
 
+- (void)centralManager:(CBCentralManager *)central willRestoreState:(NSDictionary<NSString *, id> *)dict {
+}
+
 //
 // CBPeripheralDelegate methods
 //
