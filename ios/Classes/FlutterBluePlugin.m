@@ -56,7 +56,7 @@ typedef NS_ENUM(NSUInteger, LogLevel) {
   FlutterEventChannel* descriptorReadChannel = [FlutterEventChannel eventChannelWithName:NAMESPACE @"/descriptorRead" binaryMessenger:[registrar messenger]];
   FlutterBluePlugin* instance = [[FlutterBluePlugin alloc] init];
   instance.channel = channel;
-  instance.centralManager = [[CBCentralManager alloc] initWithDelegate:instance queue:nil];
+  instance.centralManager = [[CBCentralManager alloc] initWithDelegate:instance queue:nil options: @{CBCentralManagerOptionRestoreIdentifierKey: "com.gastonmuijtjens.test"}];
   instance.scannedPeripherals = [NSMutableDictionary new];
   instance.servicesThatNeedDiscovered = [NSMutableArray new];
   instance.characteristicsThatNeedDiscovered = [NSMutableArray new];
